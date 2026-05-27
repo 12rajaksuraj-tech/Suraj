@@ -1249,37 +1249,38 @@ function escapeHtml(str: string): string {
 app.get('/manifest.json', (req, res) => {
   res.setHeader('Content-Type', 'application/manifest+json; charset=utf-8');
   res.json({
-    "name": "MVP Tournament Portal",
+    "name": "MVP Tournament",
     "short_name": "MVP",
-    "description": "Premium mobile-first tournament gaming platform",
-    "start_url": "/index.php",
-    "scope": "/",
+    "start_url": "/",
     "display": "standalone",
-    "orientation": "portrait",
-    "background_color": "#05040d",
-    "theme_color": "#05040d",
-    "categories": ["games", "sports"],
+    "background_color": "#000000",
+    "theme_color": "#0f172a",
+    "description": "Gaming tournament application",
     "icons": [
       {
-        "src": "https://img.icons8.com/color/512/game-controller.png",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "https://img.icons8.com/color/192/game-controller.png",
+        "src": "/icon-192.png",
         "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "any"
+        "type": "image/png"
       },
       {
-        "src": "https://img.icons8.com/color/512/game-controller.png",
+        "src": "/icon-512.png",
         "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "maskable"
+        "type": "image/png"
       }
     ]
   });
+});
+
+app.get('/icon-192.png', (req, res) => {
+  const filePath = path.join(process.cwd(), 'src', 'assets', 'images', 'game_logo_icon_1779864253032.png');
+  res.setHeader('Content-Type', 'image/png');
+  res.sendFile(filePath);
+});
+
+app.get('/icon-512.png', (req, res) => {
+  const filePath = path.join(process.cwd(), 'src', 'assets', 'images', 'game_logo_icon_1779864253032.png');
+  res.setHeader('Content-Type', 'image/png');
+  res.sendFile(filePath);
 });
 
 app.get('/sw.js', (req, res) => {
