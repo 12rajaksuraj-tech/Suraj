@@ -1,0 +1,6 @@
+{
+  "name": "MVP",
+  "description": "Premium mobile-first tournament gaming platform with secure OTP login, UPI wallet deposits/withdrawals, automated room distribution, match screenshot verification, and advanced anti-cheat systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
